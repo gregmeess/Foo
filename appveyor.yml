@@ -13,6 +13,5 @@ build:
 
 test: 
   assemblies:
-     - Foo.Test.dll
-     - '**\*.Foo.Test.dll'
+     - C:\projects\foo\Foo.Test\bin\Release\netcoreapp2.1\Foo.Test.dll
 
