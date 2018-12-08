@@ -8,5 +8,10 @@ namespace Foo.Lib
         {
             return true;
         }
+
+        public static bool returnFalse()
+        {
+            return true;
+        }
     }
 }

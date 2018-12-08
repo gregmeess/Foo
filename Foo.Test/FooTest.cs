@@ -10,5 +10,12 @@ namespace Foo.Test
             bool result = Lib.Foo.returnTrue();
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void Foo_ReturnFalse()
+        {
+            bool result = Lib.Foo.returnFalse();
+            Assert.IsTrue(result);
+        }
     }
 }
