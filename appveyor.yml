@@ -26,6 +26,8 @@ deploy:
       branch: master
 
 deploy_script:
+  - IF (!$env:APPVEYOR_REPO_BRANCH -eq "master") {return}
+
   - git config --global credential.helper store
 
   - ps: Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
@@ -34,4 +36,4 @@ deploy_script:
 
   - git config --global user.name "AppVeyor CI"
 
-  -  git subtree push --prefix=Foo.Lib https://github.com/gregmeess/Foo.Lib.git master
+  - git subtree push --prefix=Foo.Lib https://github.com/gregmeess/Foo.Lib.git master

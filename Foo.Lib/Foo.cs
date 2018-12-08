@@ -11,7 +11,7 @@ namespace Foo.Lib
 
         public static bool returnFalse()
         {
-            return true;
+            return false;
         }
     }
 }
