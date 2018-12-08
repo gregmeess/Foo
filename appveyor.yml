@@ -13,5 +13,7 @@ build:
 
 test: 
   assemblies:
-     - C:\projects\foo\Foo.Test\bin\Release\netcoreapp2.1\Foo.Test.dll
+    only:
+      - Foo.Test.dll
+      - '**\*Foo.Test.dll'
 
