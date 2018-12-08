@@ -19,6 +19,10 @@ test_script:
 - cmd: >-
     dotnet test --logger:Appveyor Foo.Test\Foo.Test.csproj -c Release 
 
+deploy:
+  on:
+    branch: master
+
 deploy_script:
   - git config --global credential.helper store
 
