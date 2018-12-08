@@ -1,12 +1,14 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 
-build_script:
-- cmd: >-
-    dotnet restore Foo.sln
-    
-    dotnet build Foo.sln -c Release
+configuration: Release
+platform: Any CPU
 
-test_script:
-- cmd: >-
-    vstest.console /logger:Appveyor Foo.Test/Foo.Test.csproj
+before_build:
+  - nuget restore
+
+build:
+  project: Foo.sln
+  verbosity: minimal
+
+test: on
