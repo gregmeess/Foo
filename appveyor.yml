@@ -19,14 +19,13 @@ test_script:
 - cmd: >-
     dotnet test --logger:Appveyor Foo.Test\Foo.Test.csproj -c Release 
 
-before_deploy:
+deploy_script:
   - git config --global credential.helper store
 
   - ps: Add-Content "$HOME\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
 
-  - git config --global user.email "greg@sutromachine.com"
+  - git config --global user.email "AppVeyor"
 
   - git config --global user.name "AppVeyor CI"
 
-deploy_script:
   - git subtree push --prefix=Foo.Lib git@github.com:gregmeess/Foo.Lib.git release
