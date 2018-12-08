@@ -9,5 +9,9 @@ before_build:
 
 build:
   project: Foo.sln
+
 test:
-  on
+  # only assemblies to test
+  assemblies:
+    only:
+      - Foo.Test.dll
