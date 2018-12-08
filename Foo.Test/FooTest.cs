@@ -15,7 +15,7 @@ namespace Foo.Test
         public void Foo_ReturnFalse()
         {
             bool result = Lib.Foo.returnFalse();
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
     }
 }
