@@ -14,3 +14,7 @@ build:
 test_script:
 - cmd: >-
     dotnet test --logger:Appveyor Foo.Test\Foo.Test.csproj -c Release 
+
+deploy_script:
+- cmd: >-
+    git subtree push --prefix=Foo.Lib git@github.com:gregmeess/Foo.Lib.git release
