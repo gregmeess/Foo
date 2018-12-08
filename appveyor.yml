@@ -26,7 +26,8 @@ deploy:
       branch: master
 
 deploy_script:
-  - IF (!$env:APPVEYOR_REPO_BRANCH -eq "master") {return}
+
+  - ps: IF ($env:APPVEYOR_REPO_BRANCH -ne "master") {Exit-AppveyorBuild}
 
   - git config --global credential.helper store
 
