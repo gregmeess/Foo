@@ -9,4 +9,4 @@ build_script:
 
 test_script:
 - cmd: >-
-    dotnet pack geometry3Sharp_netstandard.csproj -c Release
+    dotnet test Foo.sln -c Release
