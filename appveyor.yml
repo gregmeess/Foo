@@ -1,16 +1,6 @@
 version: '1.0.{build}'
 image: Visual Studio 2017
 
-#patch version in csproj file 
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
-
 build_script:
 - cmd: >-
     dotnet restore Foo.sln
