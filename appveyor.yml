@@ -1,8 +1,13 @@
-version: '1.0.{build}'
+version: 1.0.{build}
 image: Visual Studio 2017
 
-build_script:
-- cmd: >-
-    dotnet restore Foo.sln
-    dotnet build Foo.sln -c Release
-test: on
+configuration: Release
+platform: Any CPU
+
+before_build:
+  - nuget restore
+
+build:
+  project: Foo.sln
+test:
+  on
