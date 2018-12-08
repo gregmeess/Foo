@@ -9,4 +9,4 @@ build_script:
 
 test_script:
 - cmd: >-
-    dotnet test Foo.Test\Foo.Test.csproj -c Release
+    vstest.console /logger:Appveyor Foo.Test/Foo.Test.csproj
