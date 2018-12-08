@@ -1,17 +1,11 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 
-configuration: Release
-platform: Any CPU
+build_script:
+- cmd: >-
+    dotnet restore Foo.sln
+    dotnet build Foo.sln -c Release
 
-before_build:
-  - nuget restore
-
-build:
-  project: Foo.sln
-
-test:
-  # only assemblies to test
-  assemblies:
-    only:
-      - Foo.Test.dll
+test_script:
+- cmd: >-
+    dotnet pack geometry3Sharp_netstandard.csproj -c Release
