@@ -11,9 +11,6 @@ build:
   project: Foo.sln
   verbosity: minimal
 
-test: 
-  assemblies:
-    only:
-      - Foo.Test.dll
-      - '**\*Foo.Test.dll'
-
+test_script:
+- cmd: >-
+    dotnet test Foo.Test\Foo.Test.csproj -c Release
