@@ -9,4 +9,4 @@ build_script:
 
 test_script:
 - cmd: >-
-    dotnet test Foo.sln -c Release
+    dotnet test Foo.Test\Foo.Test.sln -c Release
