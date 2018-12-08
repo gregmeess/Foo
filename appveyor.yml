@@ -28,4 +28,4 @@ deploy_script:
 
   - git config --global user.name "AppVeyor CI"
 
-  - git subtree push --prefix=Foo.Lib git@github.com:gregmeess/Foo.Lib.git release
+  -  git subtree push --prefix=Foo.Lib https://github.com/gregmeess/Foo.Lib.git release
